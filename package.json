@@ -1,0 +1,24 @@
+{
+  "name": "cutt",
+  "version": "1.0.0",
+  "description": "a webpack cli for psd cutter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "build": "webpack --color"
+  },
+  "author": "jackshawn@live.com",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.29.0",
+    "html-withimg-loader": "^0.1.16",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
