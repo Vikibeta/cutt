@@ -11,10 +11,11 @@ module.exports = {
     entry: {
         'common': './src/js/common.js',
         'index': './src/js/index.js',
+        'about': './src/js/about.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].bundle.js',
+        filename: 'js/[name].bundle.js'
     },
     module: {
         rules: [
@@ -34,7 +35,7 @@ module.exports = {
                 use: extractSCSS.extract(['css-loader', 'sass-loader']),
                 exclude: [
                     path.resolve(__dirname, "src/scss/common.scss")
-                ],
+                ]
             },
             {
                 test: /common.scss$/,
@@ -45,7 +46,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {name: '[name].[ext]'}
-                }],
+                }]
             }
         ]
     },
@@ -55,8 +56,13 @@ module.exports = {
             filename: 'index.html',
             chunks: ['common', 'index']
         }),
+        new htmlWebpackPlugin({
+            template: 'src/about.html',
+            filename: 'about.html',
+            chunks: ['common', 'about']
+        }),
         extractResetCSS,
         extractSCSS,
-        extractCommonCSS,
+        extractCommonCSS
     ]
 };

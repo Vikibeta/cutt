@@ -1,8 +1,8 @@
 var utils = {
-    say: function(str) {
+    print: function(str) {
         var div = document.createElement('div');
         div.innerText = str;
-       document.body.appendChild(div);
+       document.getElementsByClassName('main')[0].appendChild(div);
     },
 
 };
