@@ -1,3 +1,3 @@
 var print = require('../js/utils').print;
 
-print('hello world, this get called from common.js');
+print('printed from common.js');

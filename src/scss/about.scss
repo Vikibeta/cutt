@@ -1,0 +1,12 @@
+@import "./variable.scss";
+
+.main {
+  height: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  text-align: center;
+
+  a.nav {text-decoration: underline}
+
+  p.color {color: red}
+}

@@ -3,4 +3,4 @@ import '../scss/common.scss';
 import '../scss/index.scss';
 var print = require('../js/utils').print;
 
-print('this get called from index.js');
+print('printed from index.js');

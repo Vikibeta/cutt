@@ -12,6 +12,9 @@ body {
 
   .main {
     width: $main-width;
+    line-height: 1.5em;
+
+    p.common-color {color: green}
   }
 
   .footer {
