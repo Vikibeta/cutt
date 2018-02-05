@@ -7,12 +7,16 @@ var extractResetCSS = new ExtractTextPlugin('css/reset.css');
 var extractCommonCSS = new ExtractTextPlugin('css/common.css');
 var extractSCSS = new ExtractTextPlugin('css/[name].bundle.css');
 
+var config = require('./cutt.config.js');
+
 module.exports = {
-    entry: {
-        'common': './src/js/common.js',
-        'index': './src/js/index.js',
-        'about': './src/js/about.js'
-    },
+    entry: (function() {
+        var obj = {'common': './src/js/common.js'};
+        config.pages.forEach(function(i) {
+            obj[i] = './src/js/' + i + '.js'
+        });
+        return obj;
+    })(),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js'
@@ -45,24 +49,24 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [{
                     loader: 'file-loader',
-                    options: {name: '[name].[ext]'}
+                    options: {name: 'img/[name].[ext]'}
                 }]
             }
         ]
     },
-    plugins: [
-        new htmlWebpackPlugin({
-            template: 'src/index.html',
-            filename: 'index.html',
-            chunks: ['common', 'index']
-        }),
-        new htmlWebpackPlugin({
-            template: 'src/about.html',
-            filename: 'about.html',
-            chunks: ['common', 'about']
-        }),
-        extractResetCSS,
-        extractSCSS,
-        extractCommonCSS
-    ]
+    plugins: (function() {
+        var arr = [extractResetCSS, extractSCSS, extractCommonCSS];
+        config.pages.forEach(function(i) {
+            arr.push(new htmlWebpackPlugin({
+                template: 'src/' + i + '.html',
+                filename:  i + '.html',
+                chunks: ['common', i]
+            }))
+        });
+        return arr;
+    })(),
+    devServer: {
+        host: config.host || 'localhost',
+        port: config.port || 8080
+    }
 };
