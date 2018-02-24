@@ -8,8 +8,6 @@
 
 ### 安装
 
-* npm
-
 ```
 // npm全局安装cutt
 npm install cutt -g
@@ -26,21 +24,7 @@ npm install
 // 开发
 npm run dev
 ```
-* git(可选)
 
-```
-// 下拉项目
-git clone https://github.com/jackshawn/cutt.git
-	
-// 进入项目
-cd cutt
-	
-// 安装依赖
-npm install
-	
-// 开发
-npm run dev
-```
 
 ### 开发
 
@@ -50,25 +34,25 @@ npm run dev
 cutt
 ├── dist/                                        # 打包文件目录
 ├── src/                                         # 源文件目录
-│   ├── common/                                  # 公共页面目录
-│   │   ├── header.html                          # 公共的页头
-│   │   └── footer.html                          # 公共的页脚
-│   ├── img/                                     # 图片目录
-│   │   ├── favicon.jpg
-│   │   └── logo.jpg
-│   ├── js/                                      # js目录
-│   │   ├── index.js                             # index页面的入口文件
-│   │   ├── about.js                             # about页面的入口文件
-│   │   ├── common.js                            # 公共的js文件
-│   │   └── utils.js                             # 公共工具函数
-│   ├── scss/                                    # 样式目录
-│   │   ├── index.scss                           # index页面样式
-│   │   ├── about.scss                           # about页面的样式
-│   │   ├── common.scss                          # 公共的样式
-│   │   ├── reset.css                            # 浏览器样式重置文件
-│   │   └── variable.scss                        # scss变量文件
-│   ├── index.html                  
-│   └── about.html
+│   ├── common/                                  # 公共页面目录
+│   │   ├── header.html                          # 公共的页头
+│   │   └── footer.html                          # 公共的页脚
+│   ├── img/                                     # 图片目录
+│   │   ├── favicon.jpg
+│   │   └── logo.jpg
+│   ├── js/                                      # js目录
+│   │   ├── index.js                             # index页面的入口文件
+│   │   ├── about.js                             # about页面的入口文件
+│   │   ├── common.js                            # 公共的js文件
+│   │   └── utils.js                             # 公共工具函数
+│   ├── scss/                                    # 样式目录
+│   │   ├── index.scss                           # index页面样式
+│   │   ├── about.scss                           # about页面的样式
+│   │   ├── common.scss                          # 公共的样式
+│   │   ├── reset.css                            # 浏览器样式重置文件
+│   │   └── variable.scss                        # scss变量文件
+│   ├── index.html                  
+│   └── about.html
 ├── package.json
 ├── README.md                  
 ├── cutt.config.js                               # cutt配置文件
